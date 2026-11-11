@@ -26,8 +26,9 @@ class PageShell extends StatelessWidget {
   final String titulo;
   final List<Widget> children;
   final List<NavLink> links; // vacío = página de caso (muestra «Volver»)
+  final VoidCallback? onHablemos; // botón «Hablemos» (lleva a Contacto)
   final ScrollController? controller;
-  const PageShell({super.key, required this.titulo, required this.children, this.links = const [], this.controller});
+  const PageShell({super.key, required this.titulo, required this.children, this.links = const [], this.onHablemos, this.controller});
 
   @override
   Widget build(BuildContext context) {
@@ -39,9 +40,9 @@ class PageShell extends StatelessWidget {
         backgroundColor: PC.bg,
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(movil ? 72 : 88),
-          child: NavBar(links: links),
+          child: NavBar(links: links, onHablemos: onHablemos),
         ),
-        endDrawer: links.isNotEmpty && NavBar.compacta(context) ? _MenuMovil(links: links) : null,
+        endDrawer: links.isNotEmpty && NavBar.compacta(context) ? _MenuMovil(links: links, onHablemos: onHablemos) : null,
         body: SingleChildScrollView(
           controller: controller,
           child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [...children, const Footer()]),
@@ -53,7 +54,8 @@ class PageShell extends StatelessWidget {
 
 class NavBar extends StatelessWidget {
   final List<NavLink> links;
-  const NavBar({super.key, this.links = const []});
+  final VoidCallback? onHablemos;
+  const NavBar({super.key, this.links = const [], this.onHablemos});
 
   /// Debajo de 900 px el menú se vuelve hamburguesa para que no se desborde.
   static bool compacta(BuildContext context) => PL.width(context) < 900;
@@ -118,7 +120,7 @@ class NavBar extends StatelessWidget {
                   child: _NavText(l),
                 ),
               const SizedBox(width: 40),
-              PillButton('Hablemos', onTap: links.last.onTap),
+              if (onHablemos != null) PillButton('Hablemos', onTap: onHablemos!),
             ],
           ]),
         ),
@@ -151,7 +153,8 @@ class _NavTextState extends State<_NavText> {
 
 class _MenuMovil extends StatelessWidget {
   final List<NavLink> links;
-  const _MenuMovil({required this.links});
+  final VoidCallback? onHablemos;
+  const _MenuMovil({required this.links, this.onHablemos});
 
   @override
   Widget build(BuildContext context) {
@@ -183,6 +186,13 @@ class _MenuMovil extends StatelessWidget {
                   child: Text(l.label, style: PT.h3()),
                 ),
               ),
+            if (onHablemos != null) ...[
+              const SizedBox(height: 24),
+              PillButton('Hablemos', expand: true, onTap: () {
+                Navigator.of(context).pop();
+                onHablemos!();
+              }),
+            ],
           ]),
         ),
       ),

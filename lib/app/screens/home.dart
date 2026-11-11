@@ -32,8 +32,8 @@ class _HomeScreenState extends State<HomeScreen> {
         NavLink('Proyectos', () => _ir(kProyectos)),
         NavLink('Sobre mí', () => _ir(kSobreMi)),
         NavLink('Experiencia', () => _ir(kExperiencia)),
-        NavLink('Contacto', () => _ir(kContacto)),
       ],
+      onHablemos: () => _ir(kContacto),
       children: [
         _Hero(onVerProyectos: () => _ir(kProyectos)),
         _Proyectos(anchor: kProyectos),
