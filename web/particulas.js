@@ -131,7 +131,20 @@ function crear(el) {
 
   // ── Animación ────────────────────────────────────────────────────────────
   const RADIO = 150, R2 = RADIO * RADIO;
-  let t = 0, raf = 0, visible = true, desconectado = 0, quieto = 0;
+  let t = 0, raf = 0, espera = 0, desconectado = 0, quieto = 0;
+
+  // Visibilidad medida directamente: al cargar, Flutter crea el div antes de
+  // ponerlo en pantalla y un IntersectionObserver lo daba por oculto.
+  function enPantalla() {
+    const r = el.getBoundingClientRect();
+    return r.width > 0 && r.height > 0 && r.bottom > 0 && r.right > 0 &&
+      r.top < window.innerHeight && r.left < window.innerWidth;
+  }
+  // Fuera de pantalla no anima; revisa cada 300 ms si volvió.
+  function esperar() {
+    if (espera || !estado.vivo) return;
+    espera = setTimeout(() => { espera = 0; if (enPantalla()) arrancar(); else esperar(); }, 300);
+  }
 
   function cuadro() {
     raf = 0;
@@ -142,6 +155,8 @@ function crear(el) {
       return;
     }
     desconectado = 0;
+    if (document.hidden) return;
+    if (!enPantalla()) { esperar(); return; }
     if (!n && !construir()) { raf = requestAnimationFrame(cuadro); return; }
 
     t += 0.016;
@@ -190,18 +205,12 @@ function crear(el) {
 
     // Con "reducir movimiento" se detiene en cuanto todo vuelve a su sitio.
     if (reducirMovimiento && !activo && movimiento / n < 0.01) { if (++quieto > 30) return; } else quieto = 0;
-    if (visible) raf = requestAnimationFrame(cuadro);
+    raf = requestAnimationFrame(cuadro);
   }
-  function arrancar() { if (!raf && estado.vivo && visible) { quieto = 0; raf = requestAnimationFrame(cuadro); } }
+  function arrancar() { if (!raf && estado.vivo && !document.hidden) { quieto = 0; raf = requestAnimationFrame(cuadro); } }
 
   const ro = new ResizeObserver(() => { n = 0; if (construir()) arrancar(); });
   ro.observe(el);
-  const io = new IntersectionObserver(([e]) => {
-    visible = e.isIntersecting;
-    if (visible) arrancar();
-    else if (raf) { cancelAnimationFrame(raf); raf = 0; }
-  });
-  io.observe(el);
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) { if (raf) { cancelAnimationFrame(raf); raf = 0; } } else arrancar();
   });
@@ -209,7 +218,7 @@ function crear(el) {
   function destruir() {
     estado.vivo = false;
     if (raf) cancelAnimationFrame(raf);
-    ro.disconnect(); io.disconnect();
+    ro.disconnect(); clearTimeout(espera);
     window.removeEventListener('pointermove', mover, { capture: true });
     document.removeEventListener('pointerleave', salir);
     window.removeEventListener('blur', salir);
