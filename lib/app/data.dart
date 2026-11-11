@@ -8,7 +8,7 @@ import 'theme.dart';
 class Enlaces {
   static const email = 'josetrujillo631@gmail.com';
   static const cv = ''; // p. ej. 'https://…/cv-jose-trujillo.pdf' o 'assets/cv.pdf'
-  static const linkedin = '';
+  static const linkedin = 'https://www.linkedin.com/in/jose-trujillo-24b168424/';
   static const behance = '';
   static const dribbble = '';
 }
