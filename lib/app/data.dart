@@ -219,7 +219,7 @@ class Home {
   static const intro =
       'Soy José Trujillo. Estudio Ingeniería en Diseño de Entretenimiento Digital y diseño tanto productos digitales como '
       'instalaciones interactivas: investigo con usuarios, defino flujos, diseño interfaces y prototipo con AR, VR y Unity. '
-      'Mi proyecto más reciente ganó Mejor Producto en la muestra DEX UPB 2026.';
+      'Mi proyecto más reciente ganó Mejor Producto en la Muestra DEX UPB 2026.';
   static const herramientas = ['Figma', 'FigJam', 'Maze', '8th Wall', 'TouchDesigner', 'Unity', 'VR / AR'];
   /// Collage del hero: arriba Luz, abajo Flux y VR Herencia.
   /// (imagen, texto de la etiqueta, slug del caso, ajuste, color de fondo)
@@ -231,7 +231,7 @@ class Home {
 
   static const sobreMiTitulo = 'Entre el diseño de producto y las experiencias inmersivas.';
   static const sobreMi =
-      'Estoy terminando Ingeniería en Diseño de Entretenimiento Digital, con énfasis en Experiencias interactivas. '
+      'Estoy terminando Ingeniería en Diseño de Entretenimiento Digital, con énfasis en Experiencias Interactivas. '
       'Trabajo en dos frentes: diseño de producto (investigación, flujos, prototipos y UI) e instalaciones y experiencias '
       'inmersivas con TouchDesigner, 8th Wall y Unity. En ambos casos empiezo igual: hablando con las personas antes de diseñar.';
   static const proceso = [
@@ -242,7 +242,7 @@ class Home {
   ];
 
   static const experienciaTitulo = 'Seis años del lado del usuario.';
-  static const empresa = 'Crediexcel S.A.S';
+  static const empresa = 'Crediexcel S.A.S.';
   static const empresaRol = 'Rol multidisciplinario · 6 años';
   static const empresaTexto =
       'Empresa de crédito donde he trabajado en varias áreas a la vez. Esa visión completa del negocio, del cliente al back '
@@ -257,7 +257,7 @@ class Home {
 
   static const habilidades = [
     ('Diseño', [
-      'Research UX', 'Arquitectura de información', 'Wireframing', 'UI Design', 'Design Systems', 'Prototipado',
+      'UX Research', 'Arquitectura de información', 'Wireframing', 'UI Design', 'Design Systems', 'Prototipado',
       'Pruebas de usabilidad', 'Benchmark competitivo', 'Accesibilidad',
     ]),
     ('Herramientas', ['Figma', 'FigJam', 'Figma Make', 'Maze', '8th Wall', 'TouchDesigner']),
@@ -287,7 +287,7 @@ const _luz = Proyecto(
   meta: [
     Meta('Rol', 'Diseño de experiencia · UX'),
     Meta('Equipo', '6 integrantes'),
-    Meta('Duración', 'Marzo – mayo 2026'),
+    Meta('Duración', 'Marzo a mayo de 2026'),
     Meta('Herramientas', 'TouchDesigner · FigJam · Figma'),
   ],
   portada: 'assets/images/luz_portada.jpg',
@@ -297,7 +297,7 @@ const _luz = Proyecto(
   tarjetaEtiquetas: ['Experiencia interactiva', 'TouchDesigner'],
   tarjetaResumen:
       'Experiencia interactiva para el Museo de Arte Religioso de Santa Fe de Antioquia que revela cómo la fe se vive en '
-      'comunidad. Elegido el mejor proyecto del semestre.',
+      'comunidad. Elegida como el mejor proyecto del semestre.',
   tarjetaImagen: 'assets/images/card_luz.jpg',
   secciones: [
     Seccion(bloques: [
@@ -347,7 +347,7 @@ const _luz = Proyecto(
         BloqueDestacado(
           'Problema central',
           '«En Santa Fe la fe funciona como una red de apoyo. Pero esas historias reales de acompañamiento se vuelven invisibles '
-              'cuando el patrimonio religioso se muestra solo como objetos antiguos o eventos masivos como la Semana Santa.»',
+              'cuando el patrimonio religioso se muestra solo como objetos antiguos o eventos masivos como la Semana Santa».',
           cita: true,
         ),
       ],
@@ -400,7 +400,7 @@ const _luz = Proyecto(
     ),
     Seccion(
       overline: 'En funcionamiento',
-      titulo: 'Así se vivió en la muestra DEX.',
+      titulo: 'Así se vivió en la Muestra DEX.',
       intro: 'Registro del montaje real: visitantes recorriendo el mapa, activando las obras con gestos y entrando a la cabina.',
       bloques: [
         BloqueMedia([
@@ -421,7 +421,7 @@ const _luz = Proyecto(
                   'navega una galería de obras con gestos de la mano: deslizar para hojear y apuntar para que la obra cobre vida.',
               [
                 Item('Encuentro', 'La obra parece un dibujo antiguo, quieto.'),
-                Item('Activación', 'Al acercarse aparecen micro-movimientos: ojos, respiración.'),
+                Item('Activación', 'Al acercarse aparecen micromovimientos: ojos, respiración.'),
                 Item('Transformación', 'La imagen se desintegra en partículas de luz.'),
                 Item('Revelación', 'Del polvo emerge una escena más profunda.'),
               ]),
@@ -429,7 +429,7 @@ const _luz = Proyecto(
               'Un muro con el mapa de Santa Fe y sus puntos de interés conectados. Al acercarse se enciende el punto de las '
                   'matronas y luego todo el mapa; con audífonos y botones, el visitante escucha la historia de cada rol.',
               [
-                Item('Pre-interacción', 'El mapa respira con un paisaje sonoro de rezos y campanas.'),
+                Item('Preinteracción', 'El mapa respira con un paisaje sonoro de rezos y campanas.'),
                 Item('Proximidad', 'Se enciende la matrona y se iluminan las conexiones.'),
                 Item('Interacción', 'Audífonos y botones para escuchar cada historia.'),
                 Item('Reinicio', 'Al completar el ciclo, el mapa se apaga y se reinicia.'),
@@ -451,7 +451,7 @@ const _luz = Proyecto(
         ],
         cita:
             '«Salir al territorio cambió el proyecto: escuchar a la comunidad nos llevó de mostrar objetos antiguos a contar cómo '
-            'la fe se vive, se comparte y se acompaña.»',
+            'la fe se vive, se comparte y se acompaña».',
         etiquetasTitulo: 'Valores del equipo',
         etiquetas: ['Empatía', 'Creatividad', 'Respeto', 'Solidaridad', 'Responsabilidad', 'Originalidad'],
       ),
@@ -530,7 +530,7 @@ const _flux = Proyecto(
           iniciales: 'CP',
           nombre: 'Camilo Paz, 21',
           descripcion: 'Estudiante de medicina de 3.er semestre en la UPB, en la transición entre la fisiología teórica y la semiología.',
-          cita: '«Siento que memorizo para pasar el examen, pero no entiendo qué le está pasando al corazón.»',
+          cita: '«Siento que memorizo para pasar el examen, pero no entiendo qué le está pasando al corazón».',
           listas: [
             ('Motivaciones', [
               'Convertir conceptos abstractos en algo que pueda ver',
@@ -599,7 +599,7 @@ const _flux = Proyecto(
     Seccion(bloques: [
       BloqueReconocimiento('assets/images/flux_certificado.jpg', 'Mejor Diseño UX/UI',
           'Reconocimiento entregado a 404 Design, el equipo de Flux, en la Muestra de Ingeniería en Diseño de Entretenimiento '
-              'Digital UPB, en Medellín el 10 de noviembre de 2026.'),
+              'Digital UPB, en Medellín, el 10 de noviembre de 2026.'),
     ]),
     Seccion(bloques: [
       BloqueCierre(
@@ -609,7 +609,7 @@ const _flux = Proyecto(
           'Pruebas con 5 estudiantes: 7 de 8 tareas con 100 % de éxito',
           'La selección de casos clínicos (60 %) se rediseñó con lo aprendido en la prueba',
         ],
-        cita: '«En educación la interfaz no compite con el contenido: cada pantalla tiene que llevar al estudiante a preguntarse "¿y si cambio esto?".»',
+        cita: '«En educación la interfaz no compite con el contenido: cada pantalla tiene que llevar al estudiante a preguntarse “¿y si cambio esto?”».',
       ),
     ]),
   ],
@@ -621,7 +621,7 @@ const _vr = Proyecto(
   overline: 'Caso de estudio · Proyecto en equipo con diseño gráfico',
   etiquetas: ['Unity 6', 'Meta Quest', 'Trabajo en equipo'],
   resumen:
-      '«Las Manos Recuerdan» es una experiencia de realidad virtual para Meta Quest sobre la memoria y la herencia. Como '
+      '«Las manos recuerdan» es una experiencia de realidad virtual para Meta Quest sobre la memoria y la herencia. Como '
       'desarrollador en Unity llevé el arte del equipo de diseño gráfico al motor y lo convertí en interacciones, guías visuales '
       'y momentos que se pueden vivir.',
   meta: [
@@ -635,7 +635,7 @@ const _vr = Proyecto(
   tarjetaBadge: 'Desarrollo Unity VR · Trabajo en equipo',
   tarjetaEtiquetas: ['Unity 6', 'Meta Quest'],
   tarjetaResumen:
-      'Experiencia de realidad virtual «Las Manos Recuerdan», desarrollada en Unity para Meta Quest. Yo me encargué del '
+      'Experiencia de realidad virtual «Las manos recuerdan», desarrollada en Unity para Meta Quest. Yo me encargué del '
       'desarrollo: interacciones, guías visuales con partículas y la integración de todo el arte al motor, trabajando de la mano '
       'con el equipo de diseño gráfico, que creó la dirección visual y los assets del proyecto.',
   tarjetaImagen: 'assets/images/card_vr.jpg',
@@ -703,7 +703,7 @@ const _vr = Proyecto(
           'Arte del equipo de diseño gráfico integrado en Unity',
           'Código en C# ordenado y trabajado por ramas con el equipo',
         ],
-        cita: '«En VR el desarrollo y el diseño no se turnan: se resuelven juntos, escena por escena.»',
+        cita: '«En VR el desarrollo y el diseño no se turnan: se resuelven juntos, escena por escena».',
       ),
     ]),
   ],
@@ -743,7 +743,7 @@ const _safetrip = Proyecto(
               'Diseñar una solución preventiva y de reacción rápida que reduzca riesgos y mejore la experiencia, integrándose al disfrute en lugar de sentirse restrictiva.',
               etiqueta: 'Acompañar sin interrumpir la fiesta'),
         ],
-        Kpi('4.81', 'de 5: el botón SOS fue la función mejor valorada', 'El 81.3% de los encuestados le dio la calificación máxima.'),
+        Kpi('4,81', 'de 5: el botón SOS fue la función mejor valorada', 'El 81,3 % de los encuestados le dio la calificación máxima.'),
       ),
     ]),
     Seccion(
@@ -755,12 +755,12 @@ const _safetrip = Proyecto(
       superficie: true,
       bloques: [
         BloqueStats([
-          Item('90.6%', 'va a festivales por la música y los artistas'),
-          Item('46.9%', 'teme perder el contacto con sus amigos'),
-          Item('40.6%', 'no sabe dónde están los puntos de apoyo'),
-          Item('72.7%', 'nunca había oído de colectivos como Échele Cabeza'),
-          Item('56.3%', 'teme que los datos de la app no sean confiables'),
-          Item('70%+', 'considera la seguridad algo fundamental'),
+          Item('90,6 %', 'va a festivales por la música y los artistas'),
+          Item('46,9 %', 'teme perder el contacto con sus amigos'),
+          Item('40,6 %', 'no sabe dónde están los puntos de apoyo'),
+          Item('72,7 %', 'nunca había oído hablar de colectivos como Échele Cabeza'),
+          Item('56,3 %', 'teme que los datos de la app no sean confiables'),
+          Item('+70 %', 'considera la seguridad algo fundamental'),
         ]),
         BloqueDestacado(
           'Insight',
@@ -775,11 +775,11 @@ const _safetrip = Proyecto(
       intro: 'Pedimos calificar cada función de 1 a 5. El resultado definió el orden del diseño.',
       bloques: [
         BloqueBarras([
-          Item('Botón SOS', 'Seguridad inmediata', numero: '4.81'),
-          Item('Mapa interactivo', 'Acceso y orientación', numero: '4.69'),
-          Item('Alertas en tiempo real', 'Prevención colectiva', numero: '4.44'),
-          Item('Planificador de consumo', 'Prevención individual', numero: '4.19'),
-        ], 'El planificador de consumo obtuvo la nota más baja, posiblemente por el estigma de registrar consumos. Por eso lo diseñamos opcional y 100% privado.'),
+          Item('Botón SOS', 'Seguridad inmediata', numero: '4,81'),
+          Item('Mapa interactivo', 'Acceso y orientación', numero: '4,69'),
+          Item('Alertas en tiempo real', 'Prevención colectiva', numero: '4,44'),
+          Item('Planificador de consumo', 'Prevención individual', numero: '4,19'),
+        ], 'El planificador de consumo obtuvo la nota más baja, posiblemente por el estigma de registrar consumos. Por eso lo diseñamos opcional y 100 % privado.'),
       ],
     ),
     Seccion(
@@ -791,7 +791,7 @@ const _safetrip = Proyecto(
           iniciales: 'SR',
           nombre: 'Sebastián Restrepo, 28',
           descripcion: 'Ingeniero de sistemas · Medellín. Va con frecuencia a festivales como Afterlife, Ultra y Ritvales.',
-          cita: '«Necesito disfrutar la música de forma segura, sin perder a mis amigos ni quedarme sin ayuda en una emergencia.»',
+          cita: '«Necesito disfrutar la música de forma segura, sin perder a mis amigos ni quedarme sin ayuda en una emergencia».',
           listas: [
             ('Motivaciones', [
               'Ver artistas en vivo y bailar durante horas',
@@ -808,7 +808,7 @@ const _safetrip = Proyecto(
         ),
         BloqueTarjetas([
           Item('¿Qué piensa y siente?', 'Quiere disfrutar sin preocupaciones y sentirse tranquilo y acompañado.', color: PC.peach),
-          Item('¿Qué oye?', '«Hidrátate», «no te quedes solo», y anuncios del festival que no siempre llegan a tiempo.', color: PC.sky),
+          Item('¿Qué oye?', '«Hidrátate», «no te quedes solo» y anuncios del festival que no siempre llegan a tiempo.', color: PC.sky),
           Item('¿Qué ve?', 'Aglomeraciones y poca señalización de hidratación, baños y primeros auxilios.', color: PC.mint),
           Item('¿Qué dice y hace?', 'Usa chats para ubicarse con amigos y a veces minimiza el riesgo: «no me va a pasar nada».', color: PC.lilac),
         ], columnas: 4, estilo: EstiloTarjeta.punto),
@@ -868,7 +868,7 @@ const _safetrip = Proyecto(
         ],
         cita:
             '«En temas sensibles, la confianza también se diseña: la función menos valorada no lo era por inútil, sino por el '
-            'estigma. La privacidad y la claridad tienen que estar desde el primer boceto.»',
+            'estigma. La privacidad y la claridad tienen que estar desde el primer boceto».',
       ),
     ]),
   ],

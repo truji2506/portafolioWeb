@@ -276,7 +276,7 @@ class _Barras extends StatelessWidget {
   }
 
   Widget _barra(BuildContext context, Item it, bool movil) {
-    final valor = double.tryParse(it.numero ?? '0') ?? 0;
+    final valor = double.tryParse((it.numero ?? '0').replaceAll(',', '.')) ?? 0;
     final etiqueta = Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       Text(it.titulo, style: PT.h4()),
       Text(it.texto, style: PT.bodyS()),
