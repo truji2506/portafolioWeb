@@ -219,7 +219,7 @@ class Home {
   static const intro =
       'Soy José Trujillo. Estudio Ingeniería en Diseño de Entretenimiento Digital y diseño tanto productos digitales como '
       'instalaciones interactivas: investigo con usuarios, defino flujos, diseño interfaces y prototipo con AR, VR y Unity. '
-      'Mi proyecto más reciente ganó Mejor Producto en la Muestra DEX UPB 2026.';
+      'Mis proyectos ganaron Mejor Producto: Experiencias Interactivas (DEX 2026-1) y Mejor Diseño UX/UI (DEX 2026-2).';
   static const herramientas = ['Figma', 'FigJam', 'Maze', '8th Wall', 'TouchDesigner', 'Unity', 'VR / AR'];
   /// Collage del hero: arriba Luz, abajo Flux y VR Herencia.
   /// (imagen, texto de la etiqueta, slug del caso, ajuste, color de fondo)
@@ -278,7 +278,7 @@ const _luz = Proyecto(
   slug: 'luz-memorias-eternidad',
   titulo: 'Luz, Memorias y Eternidad',
   overline: 'Caso de estudio · Taller 6 · Santa Fe de Antioquia',
-  insignia: 'Mejor Producto: Experiencias Interactivas · DEX UPB 2026',
+  insignia: 'Mejor Producto: Experiencias Interactivas · DEX 2026-1',
   etiquetas: ['Experiencia interactiva', 'Patrimonio', 'TouchDesigner'],
   resumen:
       'Una experiencia interactiva para el Museo de Arte Religioso de Santa Fe de Antioquia que revela cómo la fe se vive en '
@@ -292,7 +292,7 @@ const _luz = Proyecto(
   ],
   portada: 'assets/images/luz_portada.jpg',
   portadaFondo: PC.ink,
-  tarjetaBadge: 'Mejor Producto: Experiencias Interactivas · DEX 2026',
+  tarjetaBadge: 'Mejor Producto: Experiencias Interactivas · DEX 2026-1',
   tarjetaTrofeo: true,
   tarjetaEtiquetas: ['Experiencia interactiva', 'TouchDesigner'],
   tarjetaResumen:
@@ -313,7 +313,7 @@ const _luz = Proyecto(
               etiqueta: '¿Cómo podríamos…'),
         ],
         Kpi('Mejor Producto', 'Experiencias Interactivas',
-            'Reconocimiento en la Muestra DEX de Ingeniería en Diseño de Entretenimiento Digital UPB · 25 de mayo de 2026',
+            'Reconocimiento en la Muestra DEX 2026-1 de Ingeniería en Diseño de Entretenimiento Digital UPB · 25 de mayo de 2026',
             trofeo: true),
       ),
     ]),
@@ -439,12 +439,12 @@ const _luz = Proyecto(
     ),
     Seccion(bloques: [
       BloqueReconocimiento('assets/images/luz_certificado.jpg', 'Mejor Producto: Experiencias Interactivas',
-          'Muestra de Ingeniería en Diseño de Entretenimiento Digital UPB (DEX). Medellín, 25 de mayo de 2026. Elegido como el mejor proyecto del semestre.'),
+          'Muestra de Ingeniería en Diseño de Entretenimiento Digital UPB (DEX 2026-1). Medellín, 25 de mayo de 2026. Elegido como el mejor proyecto del semestre.'),
     ]),
     Seccion(bloques: [
       BloqueCierre(
         logros: [
-          'Reconocimiento a Mejor Producto en Experiencias Interactivas (DEX UPB 2026)',
+          'Reconocimiento a Mejor Producto en Experiencias Interactivas (DEX 2026-1)',
           'Dos instalaciones interactivas: Obras vivas y Mapa de historias',
           'Propuesta presentada al museo con cronograma, subproductos y paquetes',
           // TODO: agrega tu aporte específico dentro del equipo.
@@ -463,7 +463,7 @@ const _flux = Proyecto(
   slug: 'flux',
   titulo: 'Flux',
   overline: 'Caso de estudio · Proyecto integrador · Equipo 404',
-  insignia: 'Mejor Diseño UX/UI · DEX UPB 2026',
+  insignia: 'Mejor Diseño UX/UI · DEX 2026-2',
   etiquetas: ['Web app', 'EdTech', 'Simulación 3D'],
   resumen:
       'Simulador interactivo de fisiología cardiovascular para estudiantes de medicina: cambias una variable y ves en 3D qué le '
@@ -477,7 +477,8 @@ const _flux = Proyecto(
   ],
   portada: 'assets/images/flux_portada.jpg',
   portadaFondo: PC.night,
-  tarjetaBadge: 'Proyecto integrador · Web app + AR',
+  tarjetaBadge: 'Mejor Diseño UX/UI · DEX 2026-2',
+  tarjetaTrofeo: true,
   tarjetaEtiquetas: ['Web app', 'EdTech'],
   tarjetaResumen:
       'Simulador interactivo de fisiología cardiovascular para estudiantes de medicina: simulaciones 3D, casos clínicos, '
@@ -599,11 +600,12 @@ const _flux = Proyecto(
     Seccion(bloques: [
       BloqueReconocimiento('assets/images/flux_certificado.jpg', 'Mejor Diseño UX/UI',
           'Reconocimiento entregado a 404 Design, el equipo de Flux, en la Muestra de Ingeniería en Diseño de Entretenimiento '
-              'Digital UPB, en Medellín, el 10 de noviembre de 2026.'),
+              'Digital UPB (DEX 2026-2), en Medellín, el 10 de noviembre de 2026.'),
     ]),
     Seccion(bloques: [
       BloqueCierre(
         logros: [
+          'Reconocimiento a Mejor Diseño UX/UI (DEX 2026-2)',
           'Web app publicada en fluxapp.site, instalable como PWA en tablet',
           'Experiencia de realidad aumentada con 8th Wall en la tarjeta de presentación',
           'Pruebas con 5 estudiantes: 7 de 8 tareas con 100 % de éxito',
