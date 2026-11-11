@@ -110,24 +110,19 @@ function crear(el) {
     return true;
   }
 
-  // ── Mouse: posición local y velocidad (para el barrido) ──────────────────
+  // ── Mouse: Flutter manda la posición local (x, y desde la esquina superior
+  // izquierda del hero) con particulasMover; no se escuchan eventos del DOM.
   const mouse = { x: 0, y: 0, vx: 0, vy: 0, activo: false, previo: false };
-  function mover(e) {
-    const r = el.getBoundingClientRect();
-    const lx = e.clientX - r.left, ly = e.clientY - r.top;
-    const dentro = lx >= 0 && ly >= 0 && lx <= r.width && ly <= r.height;
-    const x = lx - r.width / 2, y = -(ly - r.height / 2);
-    if (dentro && mouse.previo) {
+  estado.mover = (lx, ly) => {
+    const x = lx - w / 2, y = -(ly - h / 2);
+    if (mouse.previo) {
       mouse.vx += ((x - mouse.x) - mouse.vx) * 0.5;
       mouse.vy += ((y - mouse.y) - mouse.vy) * 0.5;
     }
-    mouse.x = x; mouse.y = y; mouse.activo = dentro; mouse.previo = dentro;
-    if (dentro) arrancar();
-  }
-  function salir() { mouse.activo = false; mouse.previo = false; }
-  window.addEventListener('pointermove', mover, { passive: true, capture: true });
-  document.addEventListener('pointerleave', salir);
-  window.addEventListener('blur', salir);
+    mouse.x = x; mouse.y = y; mouse.activo = true; mouse.previo = true;
+    arrancar();
+  };
+  estado.salir = () => { mouse.activo = false; mouse.previo = false; };
 
   // ── Animación ────────────────────────────────────────────────────────────
   const RADIO = 150, R2 = RADIO * RADIO;
@@ -219,9 +214,6 @@ function crear(el) {
     estado.vivo = false;
     if (raf) cancelAnimationFrame(raf);
     ro.disconnect(); clearTimeout(espera);
-    window.removeEventListener('pointermove', mover, { capture: true });
-    document.removeEventListener('pointerleave', salir);
-    window.removeEventListener('blur', salir);
     if (geo) geo.dispose();
     material.dispose();
     renderer.dispose();
@@ -235,4 +227,10 @@ function crear(el) {
 
 // Atiende los divs que Flutter pidió antes de que cargara este módulo.
 window.iniciarParticulas = crear;
+window.particulasMover = (el, x, y) => {
+  if (!el) return;
+  if (!el.__particulas) crear(el); // por si se destruyó mientras estaba fuera del DOM
+  el.__particulas.mover?.(x, y);
+};
+window.particulasSalir = (el) => { el?.__particulas?.salir?.(); };
 (window.__particulas || []).splice(0).forEach(crear);

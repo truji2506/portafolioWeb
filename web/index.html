@@ -32,8 +32,8 @@
 <body>
   <!-- Fondo de partículas del hero (three.js). Flutter llama a iniciarParticulas(div);
        si lo hace antes de que cargue el módulo, el div queda en cola. -->
-  <script>window.__particulas=[];window.iniciarParticulas=function(el){window.__particulas.push(el);};</script>
-  <script type="module" src="particulas.js"></script>
+  <script>window.__particulas=[];window.iniciarParticulas=function(el){window.__particulas.push(el);};window.particulasMover=function(){};window.particulasSalir=function(){};</script>
+  <script type="module" src="particulas.js?v=3"></script>
   <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>

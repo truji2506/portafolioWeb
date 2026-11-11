@@ -89,15 +89,14 @@ class _Hero extends StatelessWidget {
     ]);
 
     // Fondo de partículas (three.js) detrás de todo el hero.
-    return Stack(children: [
-      const Positioned.fill(child: ColoredBox(color: PC.bg)),
-      const Positioned.fill(child: FondoParticulas()),
-      SectionBox(
+    return FondoParticulas(
+      fondo: PC.bg,
+      child: SectionBox(
         transparente: true,
         top: movil ? 48 : 96,
         child: SplitRow(left: copy, right: collage, rightWidth: PL.isDesktop(context) ? 480 : null, gap: 72, align: CrossAxisAlignment.center),
       ),
-    ]);
+    );
   }
 }
 
